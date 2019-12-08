@@ -1,6 +1,6 @@
 # Assignment-Todo-List (Angular App)
 
-What does the app do?
+### What does the app do?
 It is a simple todo-list application that students can use to keep track of their assignments.
 The interface allows a user to create a list of Assignments and their due-dates and keep track of their submission status.
 The applicaiton supports full CRUD funtionalities where any CRUD request happens by using simple ResfulAPIs that makes call to 
@@ -12,7 +12,7 @@ Core concepts explored: MVC architeture, SPA, Angular CLI, TypeScript, Angular d
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.3.
 
-Techonology Stack:
+### Techonology Stack:
 1) Front-end UI using Angular 7
 2) CRUD RestfulAPI using ExpressJS and Node
 3) MongoDB Cloud as NoSql DB
