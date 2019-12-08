@@ -1,0 +1,73 @@
+
+<div class="formExp">
+    <div>
+        <button mat-raised-button
+            color="primary"
+            routerLink="/home"> 
+            Go Back
+        </button>
+    </div>
+     
+    <h2>Assignment Registration Form</h2>
+    <form ngForm #assignmentsForm class="form" >
+        <mat-form-field>
+            <input matInput #assignmentName [(ngModel)] = "name" name="name" placeholder = "What is your assignment name?">
+        </mat-form-field>
+        <mat-form-field>
+                <input matInput 
+                    [matDatepicker]="picker"
+                    [(ngModel)] = "dueDate"
+                    name="dueDate" placeholder="When is your assignment due?">
+                <mat-datepicker-toggle matSuffix
+                    [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+
+        <p>Submission status?</p>
+        
+        <mat-slide-toggle #submissionToggle [(ngModel)]="checked"
+                            name="checked"
+                            color = "warn"
+                            (change)="onToggle()"
+                            [ngClass]="{'submitted': checked === true,
+                            'unsubmitted': checked === false}"
+                            >
+                            {{submissionStatus}}
+        </mat-slide-toggle>
+
+        <button mat-flat-button (click) = 
+                    "onClick();
+                    assignmentsForm.reset() 
+                    " 
+                    
+                    color="warn"
+                    class="button"
+                    type="button">
+                Add Assignments</button>
+    </form>
+    <div class="expansionPanel">
+            <mat-accordion>
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                            <mat-panel-title>
+                                Click To View 2 Way Databinding
+                            </mat-panel-title>
+                            <mat-panel-description>
+                                Real Time Data From The Form Fields Above
+                            </mat-panel-description>
+                            
+                    </mat-expansion-panel-header>
+                    <div>
+                            <mat-card class="card">
+                                <mat-card-title>Updated Assignment Details: Two Way Data-Binding</mat-card-title>
+                                
+                                <mat-card-subtitle>Assignment Name: {{name}}</mat-card-subtitle>
+                                <mat-card-subtitle>Assignment Due: {{dueDate | date}}</mat-card-subtitle>
+                                <mat-card-subtitle>Submission Status: {{submissionStatus}}</mat-card-subtitle>
+                            </mat-card>
+                    </div>
+                </mat-expansion-panel>
+            </mat-accordion>
+    </div>
+</div>
+

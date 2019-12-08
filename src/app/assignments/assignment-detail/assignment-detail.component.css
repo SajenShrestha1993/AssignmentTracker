@@ -1,0 +1,9 @@
+.closeButton{
+    margin-left:95%;
+}
+.updateItem{
+    display:flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    
+}

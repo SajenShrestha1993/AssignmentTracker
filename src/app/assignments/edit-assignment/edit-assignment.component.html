@@ -1,0 +1,52 @@
+<div class="container" *ngIf="assignment">
+    <h2>Edit Assignment: {{assignment.name}}</h2>
+    
+    <button mat-raised-button
+                    color="primary"
+                    (click)="onGoBack()"
+                    style="margin-bottom:2%"> 
+                    Go Back
+    </button>
+
+    <form ngForm class="form">
+        <mat-form-field>
+            <input matInput
+                
+                [(ngModel)]="name"
+                name="name">
+        </mat-form-field>
+    
+        <mat-form-field>
+                <input matInput 
+                    [matDatepicker]="picker"
+                        
+                        [(ngModel)]="dueDate"
+                        name="dueDate">
+                <mat-datepicker-toggle matSuffix
+                    [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+
+        <p>Submission status?</p>
+        
+        <mat-slide-toggle #submissionToggle [(ngModel)]="checked"
+                            name="checked"
+                            color = "warn"
+                            (change)="onToggle()"
+                            
+                            >
+                            {{submissionStatus}}
+        </mat-slide-toggle>
+        
+        <button 
+            mat-flat-button 
+            color="accent"
+            (click)="onSubmit()"
+            class="button">
+            SUBMIT CHANGES
+        </button>
+        
+       
+    </form>
+</div>
+

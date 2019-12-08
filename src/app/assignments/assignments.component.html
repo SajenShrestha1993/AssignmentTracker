@@ -1,0 +1,166 @@
+<div class="entirePage">
+    <main class="container" >
+        
+            <button 
+                mat-flat-button color = "accent"
+                (click)="onAdd()"
+                class="addButton"
+                routerLink="/add">
+                Add Assignment
+            </button>
+            <mat-tab-group>
+                <mat-tab label="Due">
+                    <div *ngFor="let assignment of assignments" class="matCardContainer">
+                    <mat-card *ngIf="assignment.submitted == false">
+                        
+                        <div classs="header" >
+                            <mat-card-title>{{assignment.name}}</mat-card-title>
+    
+                            <mat-card-subtitle 
+                                [ngClass]="{'submitted': assignment.submitted === true,
+                                'unsubmitted': assignment.submitted === false}"
+                                *ngIf="assignment.submitted == false"> 
+                                DUE ON: {{assignment.dueDate | date}}
+                            </mat-card-subtitle>
+                        </div>
+
+                        <mat-card-content *ngIf="assignment.submitted == true">
+                            Great job! You have already submitted your assignment.<br>
+                            No further action needed!
+                        </mat-card-content>
+
+                        <mat-card-content *ngIf="assignment.submitted == false">
+                            Assignment submitted after the Due Date<br>
+                            shall be penalized!
+                        </mat-card-content>
+
+                        <mat-card-actions>
+                            <div class="updateItem">
+                                <button 
+                                    mat-flat-button color="primary"
+                                    (click)="setAssignment(assignment)"
+                                    >
+                                    DETAILS
+                                </button>
+            
+                                <button
+                                    mat-flat-button color="warn"
+                                    (click)="onDelete(assignment._id)"
+                                    >
+                                    DELETE
+                                </button>
+                            </div>
+                        </mat-card-actions>
+
+                        <mat-card-footer class="footer">
+                            University of Texas at Arlington
+                        </mat-card-footer>
+                    </mat-card>
+                </div>
+                </mat-tab>
+
+                <mat-tab label="Submitted">
+                        <div *ngFor="let assignment of assignments" class="matCardContainer">
+                        <mat-card *ngIf="assignment.submitted == true">
+                            
+                            <div classs="header" >
+                                <mat-card-title>{{assignment.name}}</mat-card-title>
+        
+                                <mat-card-subtitle 
+                                    [ngClass]="{'submitted': assignment.submitted === true,
+                                    'unsubmitted': assignment.submitted === false}"
+                                    > 
+                                    SUBMITTED
+                                </mat-card-subtitle>
+                            </div>
+    
+                            <mat-card-content *ngIf="assignment.submitted == true">
+                                Great job! You have already submitted your assignment.<br>
+                                No further action needed!
+                            </mat-card-content>
+    
+                            <mat-card-content *ngIf="assignment.submitted == false">
+                                Assignment submitted after the Due Date<br>
+                                shall be penalized!
+                            </mat-card-content>
+    
+                            <mat-card-actions>
+                                <div class="updateItem">
+                                    <button 
+                                        mat-flat-button color="primary"
+                                        (click)="setAssignment(assignment)"
+                                        >
+                                        DETAILS
+                                    </button>
+                
+                                    <button
+                                        mat-flat-button color="warn"
+                                        (click)="onDelete(assignment._id)"
+                                        >
+                                        DELETE
+                                    </button>
+                                </div>
+                            </mat-card-actions>
+    
+                            <mat-card-footer class="footer">
+                                University of Texas at Arlington
+                            </mat-card-footer>
+                        </mat-card>
+                    </div>
+                    </mat-tab>
+           </mat-tab-group>
+
+          
+        
+        <!-- <button 
+            mat-flat-button color = "warn"
+            (click)="getListFromService()"
+            class="addButton">
+            Show List from Service
+        </button> -->
+    
+        <!-- <div class="assignmentList">
+            <h2 class="list"> Assignment List</h2>
+            <mat-list *ngFor="let assignment of assignments" class="list" >
+                
+               
+                    <h3 mat-subheader>Due on {{assignment.dueDate|date}} !</h3>
+                    
+                        <mat-list-item [ngClass]="{'submitted': assignment.submitted === true,
+                                                'unsubmitted': assignment.submitted === false}"
+                                                (click)="setAssignment(assignment)"> -->
+                        <!-- <nav><a routerLink="/assignment/{{assignment.name}}"> -->
+                            <!-- <p *ngIf="assignment.submitted; then submitted else unsubmitted"> -->
+                                    <!-- Assignment {{assignment.name}} <b>has been submitted! </b>:) -->
+                            <!-- </p> -->
+                        <!-- </a></nav> -->
+                             <!-- <ng-template #submitted>{{assignment.name}} (SUBMITTED)</ng-template>   -->
+                            <!-- <ng-template #unsubmitted>{{assignment.name}} (UNSUBMITTED)</ng-template>  -->
+                            <!-- <button class="deleteButton" mat-flat-button color="warn" (click)="onDelete(assignment.id)"> DELETE</button> -->
+                        <!-- </mat-list-item> -->
+                    
+                    
+                    <!-- <mat-divider></mat-divider> -->
+                    
+                
+                <!-- </mat-list>
+            </div> -->
+            <!-- <app-assignment-detail [passedShowBackButton]="showBackButton" *ngIf="assignments.length > 0" [passedAssignment]="selectedAssignment" ></app-assignment-detail> -->
+        </main>
+        
+        <!-- <div *ngIf="displayForm == true" >
+            <button mat-raised-button
+                color="primary"
+                (click)="goBack()"> 
+                Go Back
+            </button> -->
+
+
+            <!-- passing from child to parent component -->
+            <!-- <app-add-assignment (newAssignment)="onAddNewAssignment($event)"></app-add-assignment> -->
+            <!-- <app-add-assignment></app-add-assignment>
+        </div> -->
+        
+    </div>
+    
+    

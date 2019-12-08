@@ -1,0 +1,60 @@
+.submitted{
+    color: green;
+    
+}
+
+.unsubmitted{
+    color: crimson;
+    
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+    
+}
+
+.list{
+    padding-top: 1%;
+}
+
+.expansionPanel{
+    
+    padding-top: 2%;
+}
+
+.assignmentList{
+    cursor: pointer;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+}
+
+.addButton{
+    align-self: flex-end;
+    margin-top: -54px;
+}
+.deleteButton{
+    position: absolute;
+    right: 0;
+}
+
+.listOfItem{
+    background-color: red;
+}
+
+.updateItem{
+    display:flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-left: 7px;
+    
+}
+
+.footer{
+    margin-bottom: 5px;
+    margin-left: 5px;
+}
