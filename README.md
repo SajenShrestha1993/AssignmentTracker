@@ -2,9 +2,8 @@
 
 ### What does the app do?
 It is a simple todo-list application that students can use to keep track of their assignments.
-The interface allows a user to create a list of Assignments and their due-dates and keep track of their submission status.
-The applicaiton supports full CRUD funtionalities where any CRUD request happens by using simple ResfulAPIs that makes call to 
-MognoDB to manipulate data.
+The interface allows a user to create a list of Assignments and keep track of their due date and submission submission status.
+The applicaiton supports full CRUD funtionalities where any CRUD operation happens by using simple ResfulAPIs that makes call to MognoDB to manipulate data.
 
 The project was initiated to explore the core concepts of Angulat 7 by building a complete responsive application from scratch.
 
