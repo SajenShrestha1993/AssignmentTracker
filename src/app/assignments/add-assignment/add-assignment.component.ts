@@ -28,7 +28,7 @@ export class AddAssignmentComponent implements OnInit {
 
   onClick(){
     const assignment = new Assignment();
-    assignment.id = Math.floor(Math.random() * Math.floor(100));
+    assignment.id = Math.floor(Math.random() * Math.floor(100)); //Generates random ID for DB collection
     assignment.name = this.name;
     assignment.dueDate = this.dueDate;
     assignment.submitted = this.checked;
@@ -39,6 +39,7 @@ export class AddAssignmentComponent implements OnInit {
     
   }
 
+  //Submission message changes accroding to submission status
   onToggle(){
     if(this.checked === true){
      this.submissionStatus = "submitted!";

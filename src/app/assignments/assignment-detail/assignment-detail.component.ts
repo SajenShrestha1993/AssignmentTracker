@@ -12,6 +12,7 @@ export class AssignmentDetailComponent implements OnInit {
 
  
   passedAssignment = <Assignment>{};
+  //Dependency Injection
   constructor(private assignmentService:AssignmentsService,
                   private route: ActivatedRoute,
                   private router: Router) { }
@@ -30,7 +31,6 @@ export class AssignmentDetailComponent implements OnInit {
     .subscribe(assignment => this.passedAssignment = assignment);
     
   }
- 
 
   onCheck(){
     this.passedAssignment.submitted=true;
@@ -39,10 +39,6 @@ export class AssignmentDetailComponent implements OnInit {
   }
 
   onDelete(){
-    // this.assignmentService.deleteAssignment(this.passedAssignment)
-    // .subscribe(res=>console.log(res));
-    // this.passedAssignment=null;
-    // this.router.navigate(['/home']);
     this.assignmentService.deleteAssignment(this.passedAssignment._id)
     .subscribe(res => this.router.navigate(['/home']));
   }

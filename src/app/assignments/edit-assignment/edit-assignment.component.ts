@@ -20,8 +20,9 @@ export class EditAssignmentComponent implements OnInit {
               private router: Router,
               private assignmentService:AssignmentsService) { }
 
+  //Retrieving assignment by ID on init            
   ngOnInit() {
-    const nameParam= +this.route.snapshot.params.id;
+    const nameParam= +this.route.snapshot.params.id; //ID parameter from URL
     this.getAssignmentByName(nameParam);
     let retrievedAssignment = this.getAssignmentByName(nameParam);
     console.log(retrievedAssignment);
@@ -51,6 +52,7 @@ export class EditAssignmentComponent implements OnInit {
 
   }
 
+  //Update operation on Submit
   onSubmit(){
     if(this.name){
       this.assignment.name = this.name;
