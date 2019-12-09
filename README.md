@@ -12,7 +12,7 @@ Core concepts explored: MVC architeture, SPA, Angular CLI, TypeScript, Angular d
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.3.
 
 ### Techonology Stack:
-1) Front-end UI using Angular 7
+1) Front-end UI developed using Angular 7: components from Angular Material
 2) CRUD RestfulAPI using ExpressJS and Node
 3) MongoDB Cloud as NoSql DB
 
@@ -22,6 +22,8 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 Also, under project directory, using terminal navigate to `api folder` and Run `node server.js` to expose RestAPIs that the 
 applicaion can consume to perform basic CRUD operations.
+
+## Note: This app uses MongoDB Cloud as backend DB. In the `api>server.js` file, the url need to point to your MongoDB Collection. Right now it is pointing to my MongoDB collection.
 
 
 ## Code scaffolding
