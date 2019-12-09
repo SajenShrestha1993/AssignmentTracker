@@ -23,7 +23,7 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 Also, under project directory, using terminal navigate to `api folder` and Run `node server.js` to expose RestAPIs that the 
 applicaion can consume to perform basic CRUD operations.
 
-## Note: This app uses MongoDB Cloud as backend DB. In the `api>server.js` file, the url need to point to your MongoDB Collection. Right now it is pointing to my MongoDB collection.
+##### Note: This app uses MongoDB Cloud as backend DB. In the `api>server.js` file, the url need to point to your MongoDB Collection. Right now it is pointing to my MongoDB collection.
 
 
 ## Code scaffolding
